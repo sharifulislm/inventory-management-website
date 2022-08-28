@@ -28,44 +28,49 @@ const Inventory = () => {
 
         setDeliverd(quantity => quantity +1 )
          }
+         const Updatequantiy = event => {
+            event.event.preventDefault();
+         const quantity = event.target.quantity;
+         console.log(quantity);
+         }
 
-    const Updatequantiy = event => {
-        event.event.preventDefault();
-        // const quantity = event.target.quantity;
-        // const newQuantity =parseInt(quantity -1);
-        // const items = {newQuantity}
-        // console.log(Updatequantiy);
-        // let updateItemQuantiy = parseFloat(+ quantity) + parseFloat(event.target.quantity.value)
-        // let updateQuantiyItem = event.target.quantity.value;
-        // const quantity =event.target.quantity.value;
-        // onChange={(e)=> {setquantity(e.target.value)}}
-        const newItem = {description,name,images,price,supplierName,quantity:quantity}
-        // setQuantity(newItem)
+    // const Updatequantiy = event => {
+    //     event.event.preventDefault();
+    //     // const quantity = event.target.quantity;
+    //     // const newQuantity =parseInt(quantity -1);
+    //     // const items = {newQuantity}
+    //     // console.log(Updatequantiy);
+    //     // let updateItemQuantiy = parseFloat(+ quantity) + parseFloat(event.target.quantity.value)
+    //     // let updateQuantiyItem = event.target.quantity.value;
+    //     // const quantity =event.target.quantity.value;
+    //     // onChange={(e)=> {setquantity(e.target.value)}}
+    //     const newItem = {description,name,images,price,supplierName,quantity:quantity}
+    //     // setQuantity(newItem)
     
         
 
-        //  send data to the server
-        const url = `http://localhost:5000/inventory/${inventoryId}`;
-            fetch(url ,  {
-                method:'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(newItem)
-            })
-            .then(res => res.json())
-            .then (data => {
-                console.log('success', data);
-                alert('update succesfully');
+    //     //  send data to the server
+    //     const url = `http://localhost:5000/inventory/${inventoryId}`;
+    //         fetch(url ,  {
+    //             method:'PUT',
+    //             headers: {
+    //                 'content-type': 'application/json'
+    //             },
+    //             body: JSON.stringify(newItem)
+    //         })
+    //         .then(res => res.json())
+    //         .then (data => {
+    //             console.log('success', data);
+    //             alert('update succesfully');
               
-            })
+    //         })
 
          
             
       
 
 
-    }
+    // }
 
 
 
@@ -87,12 +92,12 @@ const Inventory = () => {
                      <button onClick={HandaleDeliverd} style={{background:'#03ab4f'}}>Deliverd</button>  <Link className='btn-manag' style={{background: '#04366b'}} to='/ManageInventory'>  Manage Inventories</Link>
                     </div>
                     <br/>
-                   <Form onSubmit={Updatequantiy}>
+                
                    <input placeholder='quantity' type="text" name='quantity' /> 
                    
-                   <button className='ms-1' style={{background: '#00c7bd'}}> Restock</button>
+                   <button onClick={Updatequantiy}  className='ms-1' style={{background: '#00c7bd'}}> Restock</button>
 
-                   </Form>
+                   
                     
                     
 
