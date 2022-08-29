@@ -15,7 +15,7 @@ const Inventory = () => {
  
     const [service] = useInventory(inventoryId);
    const [Deliverd ,setDeliverd]=useState(0);
-   const [quantitys ,setquantity]=useState(0);
+   const [quantitys ,setquantity]=useState('');
    console.log(quantitys);
    console.log(Deliverd);
    
@@ -27,13 +27,17 @@ const Inventory = () => {
     const { description,name,images,price,supplierName,quantity} =service;
   
     const HandaleDeliverd =() => {
-
-        setDeliverd(quantity => quantity -1 )
+        const quantitys = quantity => quantity - 1;
+        if(quantitys => 1 ){
+            setDeliverd(quantitys)
+        }
+        
          }
+         
          const Updatequantiy = event => {
             event.event.preventDefault();
          const quantity = event.target.quantity;
-         console.log(quantity);
+         setquantity(quantity);
          }
 
     // const Updatequantiy = event => {
@@ -87,13 +91,13 @@ const Inventory = () => {
                      <button onClick={HandaleDeliverd} style={{background:'#03ab4f'}}>Deliverd</button>  <Link className='btn-manag' style={{background: '#04366b'}} to='/ManageInventory'>  Manage Inventories</Link>
                     </div>
                     <br/>
-                
+               <form onSubmit={Updatequantiy}>
                    <input onChange={(e)=> {setquantity(e.target.value)}} placeholder='quantity' type="text" name='quantity' /> 
                    
-                   <button onClick={Updatequantiy}  className='ms-1' style={{background: '#00c7bd'}}> Restock</button>
+                   <button  className='ms-1' style={{background: '#00c7bd'}}> Restock</button>
 
                    
-                    
+                   </form>
                     
 
                   
