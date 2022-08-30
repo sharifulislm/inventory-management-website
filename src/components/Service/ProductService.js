@@ -22,7 +22,7 @@ const ProductService = ({services}) => {
     <div className='d-flex justify-content-between pe-2'>
     <h6>Supplier: <span>{supplierName}</span></h6>
 
-    <p className='price'> Price:{price}$</p>
+    <p className='price'> Price: <span>{price}</span>$</p>
     </div>
     <Card.Text className=''>
      {description.slice(0, 75)}...

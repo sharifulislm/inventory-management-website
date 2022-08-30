@@ -9,3 +9,11 @@ div#responsive-navbar-nav a {
     font-weight: 500;
 }
 
+.navbar-end.hidden.lg\:flex {
+    margin-left: 375px;
+    /* float: right; */
+}
+a.text-bold.text-xl {
+    font-weight: 700;
+    color: white;
+}

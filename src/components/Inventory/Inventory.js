@@ -1,13 +1,8 @@
 
 import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { Form } from 'react-bootstrap';
 
-// import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link,useParams } from 'react-router-dom';
-// import { toast } from 'react-toastify';
 import useInventory from '../../Hooks/useInventory';
-// import auth from '../firebase.init';
 import './Inventory.css';
 
 const Inventory = () => {
@@ -18,14 +13,16 @@ const Inventory = () => {
    const [quantitys ,setquantity]=useState('');
    console.log(quantitys);
    console.log(Deliverd);
+  
    
 
 
 
 
     
-    const { description,name,images,price,supplierName,quantity} =service;
+    const { _id,description,name,images,price,supplierName,quantity} =service;
   
+    console.log(_id);
     const HandaleDeliverd =() => {
         const quantitys = quantity => quantity - 1;
         if(quantitys => 1 ){
@@ -34,38 +31,44 @@ const Inventory = () => {
         
          }
          
-         const Updatequantiy = event => {
-            event.event.preventDefault();
-         const quantity = event.target.quantity;
-         setquantity(quantity);
-         }
+        //  const Updatequantiy = event => {
+        //     event.event.preventDefault();
+        //  const quantity = event.target.quantity;
+        //  setquantity(quantity);
+        //  }
 
-    // const Updatequantiy = event => {
-    //     event.event.preventDefault();
   
-        
- 
+                
+    const handlereview = event => { 
+        event.preventDefault();
+        const Products = {
     
-        
-
-        // //  send data to the server
-        // const url = `http://localhost:5000/inventory/${inventoryId}`;
-        //     fetch(url ,  {
-        //         method:'PUT',
-        //         headers: {
-        //             'content-type': 'application/json'
-        //         },
-        //         body: JSON.stringify(newItem)
-        //     })
-        //     .then(res => res.json())
-        //     .then (data => {
-        //         console.log('success', data);
-        //         alert('update succesfully');
-              
-        //     })
-
-         
+            quantity:event.target.quantity.value,
+     
+      
             
+        }
+       
+        fetch(`http://localhost:5000/quantity/${_id}`, {
+            method: 'patch',
+            headers: {
+                'content-type': 'application/json',
+              
+
+            },
+            body: JSON.stringify(Products)
+        })
+        .then(res =>res.json())
+        .then(data =>{
+            if(data){
+                // toast.success('Successfully Updated your Profile');
+                console.log("sucessfully updated");
+                event.target.reset();
+            }
+          
+    })
+        
+    }
       
 
 
@@ -86,22 +89,27 @@ const Inventory = () => {
                   
                     <h6>Price: {price}</h6>
                     <h6>Supplier : {supplierName}</h6>
-                    <h4>quantity: {Deliverd} </h4>
+                    <h4>quantity: {quantity} </h4>
                     <div>
                      <button onClick={HandaleDeliverd} style={{background:'#03ab4f'}}>Deliverd</button>  <Link className='btn-manag' style={{background: '#04366b'}} to='/ManageInventory'>  Manage Inventories</Link>
                     </div>
                     <br/>
-               <form onSubmit={Updatequantiy}>
+               {/* <form onSubmit={Updatequantiy}>
                    <input onChange={(e)=> {setquantity(e.target.value)}} placeholder='quantity' type="text" name='quantity' /> 
                    
                    <button  className='ms-1' style={{background: '#00c7bd'}}> Restock</button>
-
                    
-                   </form>
+                   </form> */}
+                   <form className='m-auto mx-auto text-center' onSubmit={handlereview}>
+      
+      <input className='input  m-auto mb-2 input-bordered w-full ' type="text"  name='quantity'  />
+              <br/>
+       
+     
+         <input className=" w-full btn font-bold  " type="submit" value="Update"/>
+
+     </form>
                     
-
-                  
-
 
                 </div>
 

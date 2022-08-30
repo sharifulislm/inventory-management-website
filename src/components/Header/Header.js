@@ -23,17 +23,7 @@ const Header = () => {
   <Nav.Link as={Link}to ="/">Home</Nav.Link>
 
   
-  <Nav>
-<NavDropdown title="Manage" id="basic-nav-dropdown">
-          <NavDropdown.Item >  <Nav.Link as={Link}to="Service">Services</Nav.Link></NavDropdown.Item>
-          <NavDropdown.Item> <Nav.Link as={Link}to="Blog"> Blog </Nav.Link></NavDropdown.Item>
-          <NavDropdown.Item>   <Nav.Link as={Link}to="ManageInventory">Manage item</Nav.Link></NavDropdown.Item>
-          <NavDropdown.Item>     <Nav.Link as={Link}to="AddItem">  AddItem</Nav.Link> </NavDropdown.Item>
 
-          {/* <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
-        </NavDropdown>
-</Nav>
 
 
 
@@ -45,11 +35,10 @@ const Header = () => {
 
 <Nav>
 
-  
-                             
-{/* <Nav.Link as={Link}to="Login">Login</Nav.Link>
-<Nav.Link as={Link}to="SignUp">Signup
-</Nav.Link> */}
+ <Nav.Link as={Link}to="Service">Services</Nav.Link>
+ <Nav.Link as={Link}to="Blog"> Blog </Nav.Link>
+  <Nav.Link as={Link}to="ManageInventory">Manage</Nav.Link>
+
 
   {
     user && <>
