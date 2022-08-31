@@ -6,6 +6,7 @@ import {  useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Loading from '../../../Loading/Loading';
 
 
 
@@ -19,14 +20,14 @@ let HendelError;
 let from = location.state?.from?.pathname || "/";
 
   if (error) {
-    console.log(error)
-    HendelError = <div>
+    
+   HendelError = <div>
         <p className='text-danger'>Error:{error.message}</p>
       </div>
     
   }
   if (loading ) {
-   
+    return( <Loading></Loading>)
    
   }
   if(user) {

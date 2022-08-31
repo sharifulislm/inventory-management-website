@@ -29,7 +29,7 @@ const ProductService = ({services}) => {
      {description.slice(0, 75)}...
     </Card.Text>
   
-    <Button onClick={() => navigateInvetorydetail(_id)} className='update-btn' variant="primary">   Stock update  <BsArrowRightCircleFill></BsArrowRightCircleFill></Button>
+    <Button onClick={() => navigateInvetorydetail(_id)} className='update-btn bg-secondary' variant="primary">   Stock update  <BsArrowRightCircleFill></BsArrowRightCircleFill></Button>
   </Card.Body>
 </Card>
         </div>

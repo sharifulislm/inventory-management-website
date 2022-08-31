@@ -57,7 +57,7 @@ const Inventory = () => {
             if(data){
                 // toast.success('Successfully Updated your Profile');
                 console.log("sucessfully updated",data);
-                // event.target.reset();
+                event.target.reset();
             }
           
     })

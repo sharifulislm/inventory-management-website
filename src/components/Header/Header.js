@@ -14,7 +14,7 @@ const Header = () => {
   }
     return (
       <>
-      <Navbar className='navbar-box ' collapseOnSelect expand="lg" sticky='top' bg="" variant="dark">
+      <Navbar className='navbar-box bg-secondary ' collapseOnSelect expand="lg" sticky='top' bg="" variant="dark">
 <Container>
 <Navbar.Brand as={Link}to ="/"><img height={30} src='' alt="" />UsedStoreParts </Navbar.Brand>
 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -36,7 +36,8 @@ const Header = () => {
 <Nav>
 
  <Nav.Link as={Link}to="Service">Services</Nav.Link>
- <Nav.Link as={Link}to="Blog"> Blog </Nav.Link>
+ <Nav.Link as={Link}to="Contact"> Contact </Nav.Link>
+ <Nav.Link as={Link}to="Contact"> Blog </Nav.Link>
   <Nav.Link as={Link}to="ManageInventory">Manage</Nav.Link>
 
 
@@ -45,8 +46,8 @@ const Header = () => {
     <Nav>
 <NavDropdown title="my item " id="basic-nav-dropdown">
   
-          <NavDropdown.Item >  <Nav.Link as={Link}to="userItem">  My Item </Nav.Link></NavDropdown.Item>
-          <NavDropdown.Item> <Nav.Link as={Link}to="MyItem"> Manage MyItem </Nav.Link></NavDropdown.Item>
+          <NavDropdown.Item >  <Nav.Link className='link-secondary' as={Link}to="userItem">  My Item </Nav.Link></NavDropdown.Item>
+          <NavDropdown.Item> <Nav.Link className='link-secondary' as={Link}to="MyItem"> Manage MyItem </Nav.Link></NavDropdown.Item>
           {/* <NavDropdown.Divider />
           <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
         </NavDropdown>

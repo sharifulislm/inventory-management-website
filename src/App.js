@@ -18,6 +18,8 @@ import Manageitems from './components/Pages/ManageItems/Manageitems';
 import ManageMyItem from './components/Pages/ManageItems/ManageMyItem';
 import Blog from './components/Pages/Blog/Blog';
 import Footers from './components/Pages/Footers/Footers';
+import Notfide from './components/Notfide';
+import Contact from './components/Home/Contact';
 
 
 function App() {
@@ -39,6 +41,9 @@ function App() {
    <Route path='Blog' element={<Blog></Blog>}></Route>
    <Route path='Login' element={<Login></Login>}></Route>
    <Route path='SignUp' element={<SignUp></SignUp>}></Route> 
+   <Route path='Contact' element={<Contact></Contact>}></Route> 
+   <Route path='*' element={<Notfide></Notfide>}></Route> 
+
   <Route path='*' element={<Notfound></Notfound>}>  </Route>
 
 
