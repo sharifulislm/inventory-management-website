@@ -7,7 +7,7 @@ import ManageProdects from './ManageProdects';
 import './Mangeprodects.css'
 
 const ManageInventory = () => {
-    // const [item, setItem] = useManage();
+  
     const [products,setProducts] =UseProducts([])
     // const [servise, setServise]=useState([]);
 

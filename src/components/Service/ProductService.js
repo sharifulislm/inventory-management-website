@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const ProductService = ({services}) => {
   
-    const { _id,description,name,images,price,supplierName,quantity} =services;
+    const { _id,email,description,name,images,price,supplierName,quantity} =services;
     const navitate =useNavigate();
     const navigateInvetorydetail = _id => {
       navitate(`/Inventory/${_id}`);
@@ -21,6 +21,7 @@ const ProductService = ({services}) => {
     <Card.Title>{name}     <p>quantity: {quantity}</p></Card.Title>  
     <div className='d-flex justify-content-between pe-2'>
     <h6>Supplier: <span>{supplierName}</span></h6>
+
 
     <p className='price'> Price: <span>{price}</span>$</p>
     </div>

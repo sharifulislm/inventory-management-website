@@ -24,7 +24,7 @@ const AddItem = () => {
     };
 
     return (
-        <div className='container'>
+        <div className='container mb-4'>
            
             <div className='w-50 mx-auto form-box mt-4 mb-2 pb-5'>
             <h2 className='text-center mt-1 pt-1'>Please add  service</h2>

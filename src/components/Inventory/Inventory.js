@@ -20,8 +20,9 @@ const Inventory = () => {
 
 
     
-    const { _id,description,name,images,price,supplierName,quantity} =service;
-  
+    const { _id,email,description,name,images,price,supplierName,quantity} =service;
+    const gmail =service.email;
+    console.log(email);
     console.log(_id);
     const HandaleDeliverd =() => {
         const quantitys = quantity => quantity - 1;
@@ -41,29 +42,22 @@ const Inventory = () => {
                 
     const handlereview = event => { 
         event.preventDefault();
-        const Products = {
-    
-            quantity:event.target.quantity.value,
-     
-      
+        const quantitys = {
             
-        }
+            quantity:event.target.quantity.value, } 
        
-        fetch(`http://localhost:5000/quantity/${_id}`, {
-            method: 'patch',
+        fetch(`http://localhost:5000/update/${gmail}`, {
+            method: 'put',
             headers: {
-                'content-type': 'application/json',
-              
-
-            },
-            body: JSON.stringify(Products)
+                'content-type': 'application/json',},
+            body: JSON.stringify(quantitys)
         })
         .then(res =>res.json())
         .then(data =>{
             if(data){
                 // toast.success('Successfully Updated your Profile');
-                console.log("sucessfully updated");
-                event.target.reset();
+                console.log("sucessfully updated",data);
+                // event.target.reset();
             }
           
     })
@@ -77,7 +71,7 @@ const Inventory = () => {
 
 
     return (
-        <div className='container mt-5'>
+        <div className='container mt-5 mb-4'>
             <div className='row'>
                 <div className='col-12 col-lg-6'>
                     <img className='w-100 p-1 rounded' src={images} alt="" />
@@ -94,19 +88,12 @@ const Inventory = () => {
                      <button onClick={HandaleDeliverd} style={{background:'#03ab4f'}}>Deliverd</button>  <Link className='btn-manag' style={{background: '#04366b'}} to='/ManageInventory'>  Manage Inventories</Link>
                     </div>
                     <br/>
-               {/* <form onSubmit={Updatequantiy}>
-                   <input onChange={(e)=> {setquantity(e.target.value)}} placeholder='quantity' type="text" name='quantity' /> 
-                   
-                   <button  className='ms-1' style={{background: '#00c7bd'}}> Restock</button>
-                   
-                   </form> */}
                    <form className='m-auto mx-auto text-center' onSubmit={handlereview}>
-      
+                   <input className='input  m-auto mb-2 input-bordered w-full text-black ' type="text"  name='quantity' value={email} required readOnly disabled />
+                   <br></br>
       <input className='input  m-auto mb-2 input-bordered w-full ' type="text"  name='quantity'  />
               <br/>
-       
-     
-         <input className=" w-full btn font-bold  " type="submit" value="Update"/>
+         <input className=" btn btn-dark" type="submit" value="Update"/>
 
      </form>
                     

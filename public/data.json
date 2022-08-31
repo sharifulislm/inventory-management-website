@@ -2,6 +2,7 @@
     {
      
       "quantity": 4,
+      "email":"booker@gmail.com",
       "images": "https://amigos-themes.com/profix/assets/images/service/item-4.jpg",
       "price": 225,
       "name": "Deirdre Rogers",
@@ -12,6 +13,7 @@
     {
     
       "quantity": 6,
+      "email":"Lourdes@gmail.com",
       "images": "https://amigos-themes.com/profix/assets/images/service/item-5.jpg",
       "price": 225,
       "name": "Ruiz Delacruz",
@@ -22,6 +24,7 @@
     {
     
       "quantity": 21,
+      "email":"Terri@gmail.com",
       "images": "https://amigos-themes.com/profix/assets/images/service/item-1.jpg",
       "price": 225,
       "name": "Latonya Strickland",
@@ -32,6 +35,7 @@
     {
      
       "quantity": 30,
+      "email":"Dunlap@gmail.com",
       "images": "https://amigos-themes.com/profix/assets/images/service/item-2.jpg",
       "price": 350,
       "name": "Adrienne Hendrix",
@@ -42,6 +46,7 @@
     {
       
       "quantity": 23,
+      "email":"Farmer@gmail.com",
       "images": "https://amigos-themes.com/profix/assets/images/service/item-3.jpg",
       "price": 25,
       "name": "Martha Reynolds",
@@ -52,6 +57,7 @@
     {
      
       "quantity": 34,
+      "email":"Hurley@gmail.com",
       "images": "https://amigos-themes.com/profix/assets/images/service/item-6.jpg",
       "price": 350,
       "name": "Doreen Rodriguez",
@@ -62,6 +68,7 @@
     {
     
       "quantity": 1,
+      "email":"Hurley@gmail.com",
       "images": "https://amigos-themes.com/profix/assets/images/service/motherboard-3.jpg",
       "price": 350,
       "name": "Mara French",
@@ -72,6 +79,7 @@
     {
     
       "quantity": 1,
+      "email":"Sonja@gmail.com",
       "images": "https://amigos-themes.com/profix/assets/images/service/service.jpg",
       "price": 350,
       "name": "Roy Carlson",
