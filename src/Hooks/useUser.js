@@ -9,7 +9,7 @@ const useUser = () => {
     const [user] =useAuthState(auth);
     useEffect(() => {
         if(user){
-            fetch(``)
+            fetch(`http://localhost:5000/users?email=${user.email}`)
             .then(res => res.json())
             .then(data => setUsers(data));
         }
