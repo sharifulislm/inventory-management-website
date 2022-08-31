@@ -1,12 +1,15 @@
 
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 import { Link,useParams } from 'react-router-dom';
 import useInventory from '../../Hooks/useInventory';
+import auth from '../firebase.init';
 import './Inventory.css';
 
 const Inventory = () => {
     const {inventoryId} = useParams();
+    const[user]= useAuthState(auth);
  
     const [service] = useInventory(inventoryId);
    const [Deliverd ,setDeliverd]=useState(0);
@@ -21,7 +24,7 @@ const Inventory = () => {
 
     
     const { _id,email,description,name,images,price,supplierName,quantity} =service;
-    const gmail =service.email;
+    const gmail =user?.email;
     console.log(email);
     console.log(_id);
     const HandaleDeliverd =() => {

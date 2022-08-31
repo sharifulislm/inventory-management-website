@@ -3,8 +3,11 @@ import './Footers.css';
 import { FaFacebook } from "react-icons/fa";
 import {AiFillGooglePlusCircle} from "react-icons/ai";
 import {AiFillTwitterCircle} from "react-icons/ai";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Footers = () => {
+   const[user] =useAuthState(auth);
     return (
         // <!--====== FOOTER ONE PART START ======-->
         <footer className="footer-area footer-one text-light bg-dark">
@@ -16,6 +19,7 @@ const Footers = () => {
                           <div className="footer-logo">
                              <span href="javascript:void(0)">
                            <h3 className='text-light'>  UsedStoreParts</h3>
+                           <span> you are Login wiht this email {user?.email}</span>
 
                              </span>
                           </div>
