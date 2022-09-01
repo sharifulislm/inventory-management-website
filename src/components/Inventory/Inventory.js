@@ -48,8 +48,8 @@ const Inventory = () => {
         const quantitys = {
             
             quantity:event.target.quantity.value, } 
-       
-        fetch(`http://localhost:5000/update/${gmail}`, {
+        
+        fetch(`https://mighty-badlands-12872.herokuapp.com/update/${gmail}`, {
             method: 'put',
             headers: {
                 'content-type': 'application/json',},
