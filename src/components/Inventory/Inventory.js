@@ -11,7 +11,7 @@ const Inventory = () => {
     const {inventoryId} = useParams();
     const[user]= useAuthState(auth);
  
-    const [service] = useInventory(inventoryId);
+    const [service,refetch,isLoading,error] = useInventory(inventoryId);
    const [Deliverd ,setDeliverd]=useState(0);
    const [quantitys ,setquantity]=useState('');
    console.log(quantitys);
@@ -69,6 +69,8 @@ const Inventory = () => {
                 // toast.success('Successfully Updated your Profile');
                 console.log("sucessfully updated",data);
                 event.target.reset();
+                refetch()
+              
             }
           
     })
@@ -106,6 +108,7 @@ const Inventory = () => {
               <br/>
               <input className=" btn btn-dark" type="submit" value="Update"/>
 
+              
      </form>
                     
 
