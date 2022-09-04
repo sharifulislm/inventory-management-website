@@ -5,7 +5,7 @@ const useInventory = inventoryId => {
    
 
     useEffect( () =>{
-        const url = `https://mighty-badlands-12872.herokuapp.com/inventory/${inventoryId}`;
+        const url = `http://localhost:5000/inventory/${inventoryId}`;
         console.log(url);
         fetch(url)
         .then(res=> res.json())

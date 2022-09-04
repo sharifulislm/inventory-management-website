@@ -24,16 +24,17 @@ const Inventory = () => {
 
     
     const { _id,email,description,name,images,price,supplierName,quantity} =service;
-    const gmail =user?.email;
+    // const gmail =user?.email;
     console.log(email);
     console.log(_id);
-    const HandaleDeliverd =() => {
-        const quantitys = quantity => quantity - 1;
-        if(quantitys => 1 ){
-            setDeliverd(quantitys)
-        }
+    // const HandaleDeliverd =() => {
+
+    //     const quantitys = quantity => quantity - 1;
+    //     if(quantitys => 1 ){
+    //         setDeliverd(quantitys)
+    //     }
         
-         }
+    //      }
          
         //  const Updatequantiy = event => {
         //     event.event.preventDefault();
@@ -45,16 +46,23 @@ const Inventory = () => {
                 
     const handlereview = event => { 
         event.preventDefault();
+
         const quantitys = {
             
-            quantity:event.target.quantity.value, } 
+            quantity:event.target.quantity.value,
         
-        fetch(`https://mighty-badlands-12872.herokuapp.com/update/${gmail}`, {
-            method: 'put',
+        }
+        console.log(quantitys);
+         
+        const url = `http://localhost:5000/update/${email}`;
+        console.log(url);
+        fetch(url, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json',},
             body: JSON.stringify(quantitys)
         })
+     
         .then(res =>res.json())
         .then(data =>{
             if(data){
@@ -88,15 +96,15 @@ const Inventory = () => {
                     <h6>Supplier : {supplierName}</h6>
                     <h4>quantity: {quantity} </h4>
                     <div>
-                     <button onClick={HandaleDeliverd} style={{background:'#03ab4f'}}>Deliverd</button>  <Link className='btn-manag' style={{background: '#04366b'}} to='/ManageInventory'>  Manage Inventories</Link>
+                     {/* <button onClick={HandaleDeliverd} style={{background:'#03ab4f'}}>Deliverd</button>  <Link className='btn-manag' style={{background: '#04366b'}} to='/ManageInventory'>  Manage Inventories</Link> */}
                     </div>
                     <br/>
                    <form className='m-auto mx-auto text-center' onSubmit={handlereview}>
-                   <input className='input  m-auto mb-2 input-bordered w-full text-black ' type="text"  name='quantity' value={email} required readOnly disabled />
+                   {/* <input className='input  m-auto mb-2 input-bordered w-full text-black ' type="text"  name='quantity' value={email} required readOnly disabled /> */}
                    <br></br>
-      <input className='input  m-auto mb-2 input-bordered w-full ' type="text"  name='quantity'  />
+                <input className='input  m-auto mb-2 input-bordered w-full ' type="text"name='quantity'  />
               <br/>
-         <input className=" btn btn-dark" type="submit" value="Update"/>
+              <input className=" btn btn-dark" type="submit" value="Update"/>
 
      </form>
                     
